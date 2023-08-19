@@ -19,8 +19,11 @@ app.use(express.json());
 
 
 // Import routes and give the server access to them.
-const apiRoutes = require('./Develop/routes/apiRoutes');
+const apiRoutes = require('./Develop/routes/apiRoutes/notesRoutes.js');
 const htmlRoutes = require('./Develop/routes/htmlRoutes');
+
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 // Start the server on the port
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
