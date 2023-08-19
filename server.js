@@ -11,7 +11,7 @@ const app = express();
 const PORT = 3005;
 
 // Static middleware pointing to the public folder
-app.use(express.static('Develop/public'));
+app.use(express.static('public'));
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -19,8 +19,8 @@ app.use(express.json());
 
 
 // Import routes and give the server access to them.
-const apiRoutes = require('./Develop/routes/apiRoutes/notesRoutes.js');
-const htmlRoutes = require('./Develop/routes/htmlRoutes');
+const apiRoutes = require('./routes/apiRoutes/notesRoutes.js');
+const htmlRoutes = require('./routes/htmlRoutes');
 
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
